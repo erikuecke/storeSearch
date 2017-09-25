@@ -19,7 +19,7 @@ class SearchViewController: UIViewController {
     // Table Identifier
     struct TableViewCellIdentifiers {
         static let searchResultCell = "SearchResultCell"
-        
+        static let nothingFoundCell = "NothingFoundCell"
     }
     
 // Test comment added
@@ -32,8 +32,10 @@ class SearchViewController: UIViewController {
         tableView.rowHeight = 80
         
         // CELL NIB
-        let cellNib = UINib(nibName: "SearchResultCell", bundle: nil)
+        var cellNib = UINib(nibName: "SearchResultCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.searchResultCell)
+        cellNib = UINib(nibName: TableViewCellIdentifiers.nothingFoundCell, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.nothingFoundCell)
         
     }
 
@@ -89,19 +91,20 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
+        
         
         if searchResults.count == 0 {
-            cell.nameLabel.text = "(Nothing found)"
-            cell.artistNameLabel.text = ""
+            return tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.nothingFoundCell, for: indexPath)
             
         } else {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
             let searchResult = searchResults[indexPath.row]
             cell.nameLabel.text = searchResult.name
             cell.artistNameLabel.text = searchResult.artistName
-            
+            return cell
         }
-        return cell
+        
 
     }
     
