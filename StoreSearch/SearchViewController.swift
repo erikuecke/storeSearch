@@ -22,6 +22,7 @@ class SearchViewController: UIViewController {
     
     var dataTask: URLSessionDataTask?
     
+    
     // Table Identifier
     struct TableViewCellIdentifiers {
         static let searchResultCell = "SearchResultCell"
@@ -161,8 +162,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
             let searchResult = searchResults[indexPath.row]
-            cell.nameLabel.text = searchResult.name
-            cell.artistNameLabel.text = String(format: "%@ (%@)", searchResult.artistName, searchResult.type)
+            cell.configure(for: searchResult)
             return cell
         }
         

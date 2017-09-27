@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E13D6DE1F7C467B00856B78 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E13D6DD1F7C467B00856B78 /* UIImageView+DownloadImage.swift */; };
 		9E5D83641F75C1050027AEE5 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E5D83631F75C1050027AEE5 /* SearchResultCell.xib */; };
 		9E5D83661F75C5D30027AEE5 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D83651F75C5D30027AEE5 /* SearchResultCell.swift */; };
 		9E8B73171F7C10E8001F5052 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E8B73161F7C10E8001F5052 /* LoadingCell.xib */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E13D6DD1F7C467B00856B78 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		9E5D83631F75C1050027AEE5 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		9E5D83651F75C5D30027AEE5 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		9E8B73161F7C10E8001F5052 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				9E5D83651F75C5D30027AEE5 /* SearchResultCell.swift */,
 				9ED1BD3D1F7943E900D4F061 /* NothingFoundCell.xib */,
 				9E8B73161F7C10E8001F5052 /* LoadingCell.xib */,
+				9E13D6DD1F7C467B00856B78 /* UIImageView+DownloadImage.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				9EE9B19A1F75A53600519D50 /* SearchResult.swift in Sources */,
 				9E5D83661F75C5D30027AEE5 /* SearchResultCell.swift in Sources */,
 				9EE9B1881F758BEC00519D50 /* AppDelegate.swift in Sources */,
+				9E13D6DE1F7C467B00856B78 /* UIImageView+DownloadImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
