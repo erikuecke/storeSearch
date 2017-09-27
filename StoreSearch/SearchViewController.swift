@@ -13,6 +13,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var searchResults = [SearchResult]()
     var hasSearched = false
@@ -33,7 +34,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         // Tableview inset
-        tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 108, left: 0, bottom: 0, right: 0)
         
         tableView.rowHeight = 80
         
@@ -54,13 +55,16 @@ class SearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func segmentedChanged(_ sender: UISegmentedControl) {
+        performSearch()
+    }
+    
 }
 
 // Search Bar Delegate
 extension SearchViewController: UISearchBarDelegate {
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    func performSearch() {
         if !searchBar.text!.isEmpty {
             
             searchBar.resignFirstResponder()
@@ -72,7 +76,7 @@ extension SearchViewController: UISearchBarDelegate {
             searchResults = []
             
             // 1
-            let url = iTunesURL(searchText: searchBar.text!)
+            let url = iTunesURL(searchText: searchBar.text!, category: segmentedControl.selectedSegmentIndex)
             // 2
             let session = URLSession.shared
             // 3
@@ -118,6 +122,12 @@ extension SearchViewController: UISearchBarDelegate {
         return .topAttached
         
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        performSearch()
+        
+    }
+    
     
     
 }
@@ -173,9 +183,22 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     // MARK:- iTunes URL
-    func iTunesURL(searchText: String) -> URL {
-        let encodedText = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=200", encodedText!)
+    func iTunesURL(searchText: String, category: Int) -> URL {
+        
+        let kind: String
+        switch category {
+        case 1:
+            kind = "musicTrack"
+        case 2:
+            kind = "software"
+        case 3:
+            kind = "ebook"
+        default:
+            kind = ""
+        }
+        
+        let encodedText = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let urlString = "https://itunes.apple.com/search?" + "term=\(encodedText)&limit=200&entity=\(kind)"
         let url = URL(string: urlString)
         return url!
         
