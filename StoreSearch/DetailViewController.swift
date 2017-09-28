@@ -94,7 +94,9 @@ class DetailViewController: UIViewController {
         }
     }
     
-    @IBAction func openInStore() { if let url = URL(string: searchResult.storeURL) { 
+    @IBAction func openInStore() {
+        if let url = URL(string: searchResult.storeURL) {
+        print(url)
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
         
         }
