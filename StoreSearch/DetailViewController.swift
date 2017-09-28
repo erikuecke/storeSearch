@@ -41,6 +41,8 @@ class DetailViewController: UIViewController {
         if searchResult != nil {
             upDateUI()
         }
+        
+        view.backgroundColor = UIColor.clear
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,6 +114,16 @@ extension DetailViewController: UIViewControllerTransitioningDelegate {
         return DimmingPresentationController(presentedViewController: presented, presenting: presenting)
         
     }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return BounceAnimationController()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SlideOutAnimationController()
+        
+    }
+    
     
 }
 // Geusture Recognizer outside of screen.

@@ -12,6 +12,9 @@
 		9E5D83641F75C1050027AEE5 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E5D83631F75C1050027AEE5 /* SearchResultCell.xib */; };
 		9E5D83661F75C5D30027AEE5 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D83651F75C5D30027AEE5 /* SearchResultCell.swift */; };
 		9E8B73171F7C10E8001F5052 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E8B73161F7C10E8001F5052 /* LoadingCell.xib */; };
+		9EB30F331F7D79FD00EFF4D4 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB30F321F7D79FD00EFF4D4 /* GradientView.swift */; };
+		9EB30F351F7D7D0D00EFF4D4 /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB30F341F7D7D0D00EFF4D4 /* BounceAnimationController.swift */; };
+		9EB30F371F7D9FB600EFF4D4 /* SlideOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB30F361F7D9FB600EFF4D4 /* SlideOutAnimationController.swift */; };
 		9ED1BD3E1F7943E900D4F061 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ED1BD3D1F7943E900D4F061 /* NothingFoundCell.xib */; };
 		9EE9B1881F758BEC00519D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE9B1871F758BEC00519D50 /* AppDelegate.swift */; };
 		9EE9B18A1F758BEC00519D50 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE9B1891F758BEC00519D50 /* SearchViewController.swift */; };
@@ -27,6 +30,9 @@
 		9E5D83631F75C1050027AEE5 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		9E5D83651F75C5D30027AEE5 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		9E8B73161F7C10E8001F5052 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		9EB30F321F7D79FD00EFF4D4 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		9EB30F341F7D7D0D00EFF4D4 /* BounceAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
+		9EB30F361F7D9FB600EFF4D4 /* SlideOutAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutAnimationController.swift; sourceTree = "<group>"; };
 		9ED1BD3D1F7943E900D4F061 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		9EE9B1841F758BEC00519D50 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EE9B1871F758BEC00519D50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +87,9 @@
 				9EE9B18E1F758BEC00519D50 /* Assets.xcassets */,
 				9EE9B1931F758BEC00519D50 /* Info.plist */,
 				9EEF2B6C1F7C5D900011D432 /* DimmingPresentationController.swift */,
+				9EB30F321F7D79FD00EFF4D4 /* GradientView.swift */,
+				9EB30F341F7D7D0D00EFF4D4 /* BounceAnimationController.swift */,
+				9EB30F361F7D9FB600EFF4D4 /* SlideOutAnimationController.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -163,9 +172,12 @@
 				9EEF2B6D1F7C5D900011D432 /* DimmingPresentationController.swift in Sources */,
 				9EE9B19A1F75A53600519D50 /* SearchResult.swift in Sources */,
 				9E5D83661F75C5D30027AEE5 /* SearchResultCell.swift in Sources */,
+				9EB30F351F7D7D0D00EFF4D4 /* BounceAnimationController.swift in Sources */,
 				9E13D6E01F7C585300856B78 /* DetailViewController.swift in Sources */,
 				9EE9B1881F758BEC00519D50 /* AppDelegate.swift in Sources */,
+				9EB30F331F7D79FD00EFF4D4 /* GradientView.swift in Sources */,
 				9E13D6DE1F7C467B00856B78 /* UIImageView+DownloadImage.swift in Sources */,
+				9EB30F371F7D9FB600EFF4D4 /* SlideOutAnimationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
