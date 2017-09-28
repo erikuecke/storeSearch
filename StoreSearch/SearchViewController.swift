@@ -60,6 +60,8 @@ class SearchViewController: UIViewController {
         performSearch()
     }
     
+    
+    
 }
 
 // Search Bar Delegate
@@ -99,18 +101,15 @@ extension SearchViewController: UISearchBarDelegate {
                         }
                         return
                     }
-                    
                 } else {
                     print("Failure! \(response!)")
                 }
-                
                 DispatchQueue.main.async {
                     self.hasSearched = false
                     self.isLoading = false
                     self.tableView.reloadData()
                     self.showNetworkError()
                 }
-                
             })
             // 5
             dataTask?.resume()
@@ -130,7 +129,15 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            let detailViewController = segue.destination as! DetailViewController
+            let indexPath = sender as! IndexPath
+            let searchResult = searchResults[indexPath.row]
+            detailViewController.searchResult = searchResult
+            
+        }
+    }
 }
 
 // Table View Delegate
@@ -171,7 +178,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        performSegue(withIdentifier: "ShowDetail", sender: indexPath)
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
