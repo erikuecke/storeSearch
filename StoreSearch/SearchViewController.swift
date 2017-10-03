@@ -91,6 +91,9 @@ class SearchViewController: UIViewController {
             controller.willMove(toParentViewController: nil)
             coordinator.animate(alongsideTransition: { _ in
                 controller.view.alpha = 0
+                if self.presentedViewController != nil {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }, completion: { _ in
                 controller.view.removeFromSuperview()
                 controller.removeFromParentViewController()
@@ -108,9 +111,7 @@ class SearchViewController: UIViewController {
             hideLandscape(with: coordinator)
             
         }
-        
     }
-    
 }
 
 // Search Bar Delegate
@@ -124,26 +125,21 @@ extension SearchViewController: UISearchBarDelegate {
                     self.showNetworkError()
                 }
                 self.tableView.reloadData()
+                self.landscapeVC?.searchResultsReceived()
             }
         }
         
         tableView.reloadData()
-        
         searchBar.resignFirstResponder()
-        
-
-    
     }
     
     // Top attached
     func position(for bar: UIBarPositioning) -> UIBarPosition {
         return .topAttached
-        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         performSearch()
-        
     }
     
     
